@@ -1,3 +1,5 @@
+
+// Define all the app variables 
 var expenseType = String()
 var itemInput = String()
 var itemPrice = Number()
@@ -86,7 +88,6 @@ function initialize() {
    
     
 
-//    document.getElementsByClassName('Entretenimiento')[0].innerHTML = totalEntretenimiento
     for  (var i = 0; i < tableData.length; i++) {
     
     var row = `<tr> <td>${tableData[i].Date}</td>  <td>${tableData[i].Item}</td> <td>$${tableData[i].Price}</td> </tr>`
