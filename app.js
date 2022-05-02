@@ -27,7 +27,7 @@ console.log(expenses)
 
 showCurrentMonth()
 initialize()
-//expensesTracking()
+
 
 
 function initialize() {
@@ -205,7 +205,7 @@ function setItemValues(event) {
     console.log(itemPrice)
     //console.log(expenseType)
    
-  //  var tableData = JSON.parse(localStorage.getItem("data"));
+
     setExpenseType(expenseType_2)
     {
         let rowToAdd;
