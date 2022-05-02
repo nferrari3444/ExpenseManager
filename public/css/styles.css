@@ -1,0 +1,175 @@
+body {
+    margin-top: 20px;
+    background-color: #FFFAF0;
+}
+
+h2 {font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: gray}
+
+h3 {
+    font-family: 'Open Sans', sans-serif; 
+    text-align: center;
+    color: white;
+   margin-bottom: 0rem;}
+    
+
+        
+h4#date {
+    color: white;
+    text-align: center;
+}
+
+
+.left-container {
+    margin-top: 5px;
+    
+     background-color: rgb(1,180,219,1);
+    background: linear-gradient(to rigth, rgb(1,180,219,1), rgb(1,131,176,0.28));
+    border-radius: 20px;
+    /* height: 500px; */
+}
+
+/* .month-container {
+    height: 100px;
+}
+/* .month { */
+
+    /* background-color: white;
+} */ */
+#expenses {
+    width: 800px;
+    margin-top: 40px;
+}
+
+.comestibles-expense{
+    color: purple;
+}
+
+.entretenimiento-expense {
+    color: lightgreen;
+}
+
+.cuentas-a-pagar-expense {
+    color: cornflowerblue;
+}
+
+.otros-expense {
+    color: white;
+} 
+#chart {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    height: 12rem;
+}
+ul {
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+
+.normal-color {
+    color: whitesmoke;
+}
+#Gastos {
+    border-radius: 10px;
+    border-color: blue;
+    height: 40px;
+    background-color: #A2E4BC;
+    margin-right: 20px;
+}
+
+#iteminput {
+
+    width: 250px;
+    height: 35px;
+}
+
+#rawdata {
+  margin-top: 0;
+  margin-right: 10px;
+  right: 20px;
+  position: absolute;
+
+}
+#priceinput {
+
+    width: 150px;
+    height: 35px;
+}
+
+
+.blue {
+      color: blue;
+  }
+
+.rojo {
+    color: red;
+}
+
+.verde {
+    color: green;
+}
+
+.rosado {
+    color: pink;
+}
+
+
+/* .card {
+
+    height: 50px;
+    width: 60px;
+    border-color: white;
+    background-color: skyblue;
+} */
+
+table {
+    /* border-collapse: collapse;     */
+    height: 500px;
+    width: 900px;
+    display: inline-block;
+    overflow: auto; 
+    
+}
+
+tr {
+    border-color: green;
+    color: white;
+}
+td {
+   border: 1px solid white;
+   width: 300px;
+}
+
+thead {
+    position:sticky;
+    top: 0
+}
+th {
+    font-size: 20px;
+    color: brown;
+    position: sticky;
+    top: 0px;
+}
+tr:nth-child(even) {background-color: black}
+tr:nth-child(odd) {background-color: black}
+
+.card {
+    width: 15rem;
+}
+
+ .card-body {
+    height: 4rem;
+ 
+    margin-top: 0px;
+} 
+
+ h5.card-title {
+    margin-top: 0px;
+}
+
+ /* .card-text {
+    margin-top: 0px;
+    background-color: white;
+}  */
