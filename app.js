@@ -15,9 +15,7 @@ var totalComestibles = Number()
 var totalCuentasAPagar = Number()
 var totalEntretenimiento = Number()
 var totalOtros = Number()
-var storeData = []
 var inputValueFlag = false
-
 var items = []
 
 
@@ -38,7 +36,7 @@ function initialize() {
     
     console.log(tableData)
 
-    if (tableData != null) {
+    if (tableData != null ) {
     tableData.map(item => {
         
     var expenseType = item.ItemType
@@ -149,8 +147,6 @@ document.getElementById("Gastos").addEventListener("click",
 return expenseType
 };
 
-
-// document.getElementsByTagName("button")[0].addEventListener("click",
 document.getElementById("addRow").addEventListener("click",
 function setItemValues(event) {
     
@@ -202,9 +198,7 @@ function setItemValues(event) {
     console.log(expenseType_2)
     const date = new Date().toLocaleDateString()
     console.log(itemInput)
-    console.log(itemPrice)
-    //console.log(expenseType)
-   
+    console.log(itemPrice) 
 
     setExpenseType(expenseType_2)
     {
@@ -231,31 +225,23 @@ function setItemValues(event) {
          rowToAdd = `<tr> <td>${date}</td>  <td>${itemInput}</td> <td class ="otros-expense">$${itemPrice}</td> </tr>`
 
     }
-  //  const rowToAdd = `<tr> <td>${date}</td>  <td>${itemInput}</td> <td class = ${cssClass}>$${itemPrice}</td> </tr>`
-    //var tableData = JSON.parse(localStorage.getItem("data"));
-    var newItem = ({Date: date , Item: itemInput, Price: itemPrice , ItemType: expenseType_2 }) 
-  //  tableData.push({Date: date , Item: itemInput, Price: itemPrice })
-    
-    if (tableData !== null){
-        
-        tableData.push(newItem)
-        }
 
-    
-   
-    
+    var newItem = {Date: date , Item: itemInput, Price: itemPrice , ItemType: expenseType_2 } 
 
+  
     addListItems(rowToAdd)
 
-    localStorage.setItem("data", JSON.stringify(tableData))
+    let items = localStorage.getItem('data') || '[]';
+    menuItems = JSON.parse(items)
+    menuItems.push(newItem)
+    localStorage.setItem("data", JSON.stringify(menuItems))
 
-    expensesTracking(expenseType_2,itemPrice,storeData)
-    //updateOverallTotal(itemPrice)
+    expensesTracking(expenseType_2,itemPrice)
+    
     reinitialize()
     renderChart()
 }}})
  
-    
 function showCurrentMonth() {
 
    var m_names = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -305,7 +291,7 @@ function updateOverallTotal(value) {
     return total
 }
 
-function expensesTracking(expense,price,storeData) {
+function expensesTracking(expense,price) {
     const expenseType = setupDropDownEvents()
     
     console.log(expense)
@@ -339,7 +325,7 @@ function expensesTracking(expense,price,storeData) {
           console.log(totalOtros)
           totalSpending.push(price)
           document.getElementsByClassName('otros')[0].innerHTML = "$" + totalOtros
-          data.addData(['Otros', totalOtros])
+          //data.addData(['Otros', totalOtros])
 
       }
 
@@ -350,25 +336,12 @@ function expensesTracking(expense,price,storeData) {
 
      
     console.log(totalSpending)
-    console.log(storeData)
-
-   
-
-   
-    // console.log(comestibles)
-    // console.log(cuentasAPagar)
-    // console.log(otros)
-    // console.log(coms)
 }
 
 function reinitialize() {
 
     document.getElementById('iteminput').value = ''
     document.getElementById('priceinput').value = ''
-
-
-   
- //   chart.draw();
 
     var tableData = JSON.parse(localStorage.getItem("data"));
    // console.log(tableData)
